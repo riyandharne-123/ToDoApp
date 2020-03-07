@@ -1,2 +1,2 @@
 # ToDoApp
-a app which add tasks and stores them on the local browser.
+a app which adds tasks and stores them on the local browser.
