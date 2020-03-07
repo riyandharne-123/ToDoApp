@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<span lang="en">
+<head>
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+<script src="script_app.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <style>
+    span.done-true{
+        display: none;
+    }
+   li.done-true{
+       display: none;
+   }
+
+    span[contenteditable="true"]{
+        background: lightgreen;
+        padding: 3px;
+    }
+    body{
+      background-color:#86badf;
+    }
+    </style>
+    
+</head>
+<body ng-app="mainApp" ng-controller="appX">
+<!--<h1 style="text-align:center;" class="font-weight-lighter">Add a Task</h1>color: gray;
+        font-style: italic;
+        text-decoration: line-through; -->
+<h1  style="text-align:center;"> <span class="badge badge-secondary">Add a Task Below</span></h1>
+<input ng-model="task" id="task" ng-Keydown="searchEnter()" type="text" style=" display: block; margin:0 auto;  padding: 5px; font-size: 15px;  width: 700px; height:40px">
+<div id="taskToShow">
+    <ul class="list-group list-group-flush" style="text-align:center; font-size: 30px;"> 
+       
+        <li class="list-group-item list-group-item-primary done-{{oneTask.status}}" ng-repeat="oneTask in tasks track by $index">
+                <input id="check" type="checkbox" ng-model="oneTask.status"/>
+       
+        <span contenteditable="false"
+         ng-keydown="enterAgain(oneTask.taskMessage)" 
+        ng-dblclick="contentEdit(oneTask.taskMessage)"
+         ng-model="oneTask.taskMessage" 
+         class="done-{{oneTask.status}}">{{oneTask.taskMessage}} 
+        </span>
+            
+        </li>       
+    </ul>
+</div>
+</body>      
+</html>
