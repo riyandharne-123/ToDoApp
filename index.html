@@ -5,6 +5,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
 <script src="script_app.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- links for popper effect-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <style>
     span.done-true{
@@ -28,7 +32,13 @@
 <!--<h1 style="text-align:center;" class="font-weight-lighter">Add a Task</h1>color: gray;
         font-style: italic;
         text-decoration: line-through; -->
-<h1  style="text-align:center;"> <span class="badge badge-secondary">Add a Task Below</span></h1>
+<h1  style="text-align:center;"> <span class="badge badge-secondary">Add a Task Below</span><a style="margin-left: 25px;" href="#" data-toggle="popover" data-content="add a task in the text box and press enter for saving it. for modifing a task already present double click the task and after you are done editing double click again. to delete a task click the check box. to make sure a new task remains on your webpage after you reload it delete a previous task if you want to. to make this message go away click on the link again!">What to do?</a></h1>
+<!--enabling popover with jquery-->
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();   
+    });
+    </script>
 
 <input ng-model="task" id="task" ng-Keydown="searchEnter()" type="text" style=" display: block; margin:0 auto;  padding: 5px; font-size: 15px;  width: 700px; height:40px">
 <br>
